@@ -1,0 +1,8 @@
+electricity x 105 
+gas x 105
+oil (petrol/diesel) x 113
+annual mileage/ 0.79
+flights past year (<4) x 1100
+flights past year (>4) x 4400
+recyle newspaper + 184
+recle aluminium/tin  + 166
