@@ -1,0 +1,41 @@
+from tkinter import *
+root = Tk()
+
+root.title("Geoki - Carbon Footprint")
+root.geometry('500x800')
+root.configure(bg= "green")
+
+e = Label(root, text="What is your monthly electricity bill?").grid(row=0)
+g = Label(root, text="What is your monthly gas bill?").grid(row=1)
+o = Label(root, text="What is your monthly oil (petrol/diesel combined) bill?").grid(row=2)
+m = Label(root, text="What is  annual mileage of your most used vehicle?").grid(row=3)
+f = Label(root, text="How many of your flights in the past year have been shorter than 4 hours?").grid(row=4)
+F = Label(root, text="How many of your flights in the past year have been longer than 4 hours?").grid(row=5)
+n = Label(root, text="Do you recycle your newspapers?").grid(row=6)
+m = Label(root, text="Do you recycle aluminium and tin?").grid(row=7)
+
+ebill = Entry(root)
+gbill = Entry(root)
+obill = Entry(root)
+mbill = Entry(root)
+fbill = Entry(root)
+Fbill = Entry(root)
+news = Entry(root)
+metal = Entry(root)
+
+
+ebill.grid(row=0, column=1)
+gbill.grid(row=1, column=1)
+obill.grid(row=2, column=1)
+mbill.grid(row=3, column=1)
+fbill.grid(row=4, column=1)
+Fbill.grid(row=5, column=1)
+news.grid(row=6, column=1)
+metal.grid(row=7, column=1)
+
+btn = Button(root, text = "Calculate my carbon footprint" ,
+             fg = "red")
+# Set Button Grid
+btn.grid(column= 0, row= 17)
+ 
+root.mainloop()
