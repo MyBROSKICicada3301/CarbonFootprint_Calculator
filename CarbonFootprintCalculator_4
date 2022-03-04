@@ -1,0 +1,70 @@
+from tkinter import *
+root = Tk()
+
+root.title("Geoki - Carbon Footprint")
+root.geometry('500x800')
+root.configure(bg= "green")
+
+e = Label(root, text="What is your monthly electricity bill?").grid(row=0)
+g = Label(root, text="What is your monthly gas bill?").grid(row=1)
+o = Label(root, text="What is your monthly oil (petrol/diesel combined) bill?").grid(row=2)
+m = Label(root, text="What is  annual mileage of your most used vehicle?").grid(row=3)
+f = Label(root, text="How many of your flights in the past year have been shorter than 4 hours?").grid(row=4)
+F = Label(root, text="How many of your flights in the past year have been longer than 4 hours?").grid(row=5)
+n = Label(root, text="Do you recycle your newspapers? (Yes/ No)").grid(row=6)
+m = Label(root, text="Do you recycle aluminium and tin? (Yes/ No)").grid(row=7)
+
+e1 = Entry(root)
+e2 = Entry(root)
+e3 = Entry(root)
+e4 = Entry(root)
+e5 = Entry(root)
+e6 = Entry(root)
+e7 = Entry(root)
+e8 = Entry(root)
+
+
+e1.grid(row=0, column=1)
+e2.grid(row=1, column=1)
+e3.grid(row=2, column=1)
+e4.grid(row=3, column=1)
+e5.grid(row=4, column=1)
+e6.grid(row=5, column=1)
+e7.grid(row=6, column=1)
+e8.grid(row=7, column=1)
+
+ebill = (e1.get())
+gbill = (e2.get())
+obill = (e3.get())
+mbill = (e4.get())
+fbill = (e5.get())
+Fbill = (e6.get())
+news = (e7.get())
+metal = (e8.get())
+
+total = 0
+
+def clicked():
+    total =0
+
+    if (news == "Yes") and (metal == "Yes"):
+        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
+        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400))
+    elif (news == "No") and (metal == "Yes"):
+        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
+         + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 184)
+    elif (news == "No") and (metal == "No"):
+        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
+        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 184 + 166)
+    elif (news == "Yes") and (metal == "No"):
+        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
+        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 166)
+
+
+
+btn = Button(root, text = "Calculate my carbon footprint" ,
+             fg = "red", command= clicked)
+# Set Button Grid
+btn.grid(column= 0, row= 17)
+
+e = Label(root, text="Total CO2 emissions: " + str(total)).grid(row=10)
