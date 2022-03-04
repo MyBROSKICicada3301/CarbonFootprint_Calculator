@@ -1,0 +1,137 @@
+from tkinter import *
+root = Tk()
+
+root.title("Geoki - Carbon Footprint Calculator")
+root.geometry('500x800')
+root.configure(bg= "green")
+
+ebill = Label(root, text = "What is your monthly electricity bill?")
+ebill.grid()
+
+ebill.place(relx = 0.5,
+                   rely = 0.1,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 0)
+ 
+def clicked():
+ 
+    res = txt.get()
+    ebill.configure(text = res)
+
+
+#
+gbill = Label(root, text = "What is your monthly gas bill?")
+gbill.grid()
+
+gbill.place(relx = 0.5,
+                   rely = 0.2,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 1)
+ 
+def clicked():
+ 
+    res = txt.get()
+    gbill.configure(text = res)
+ 
+#
+obill = Label(root, text = "What is your monthly oil (petrol/diesel combined) bill?")
+obill.grid()
+
+obill.place(relx = 0.5,
+                   rely = 0.3,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 2)
+ 
+def clicked():
+ 
+    res = txt.get()
+    obill.configure(text = res)
+#
+mbill = Label(root, text = "What is  annual mileage of your most used vehicle?")
+mbill.grid()
+
+mbill.place(relx = 0.5,
+                   rely = 0.4,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 3)
+ 
+def clicked():
+ 
+    res = txt.get()
+    mbill.configure(text = res)
+ #
+fbill = Label(root, text = "How many of your flights in the past year have been shorter than 4 hours?")
+fbill.grid()
+
+fbill.place(relx = 0.5,
+                   rely = 0.5,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 4)
+ 
+def clicked():
+ 
+    res = txt.get()
+    fbill.configure(text = res)
+ #
+Fbill = Label(root, text = "How many of your flights in the past year have been longer than 4 hours?")
+Fbill.grid()
+
+Fbill.place(relx = 0.5,
+                   rely = 0.6,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 5)
+ 
+def clicked():
+ 
+    res = txt.get()
+    Fbill.configure(text = res)
+ #
+news = Label(root, text = "Do you recycle your newspapers?")
+news.grid()
+
+news.place(relx = 0.5,
+                   rely = 0.7,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 6)
+ 
+def clicked():
+ 
+    res = txt.get()
+    news.configure(text = res)
+
+ #
+metal = Label(root, text = "Do you recycle aluminium and tin?")
+metal.grid()
+
+metal.place(relx = 0.5,
+                   rely = 0.8,
+                   anchor = 'e')
+
+txt = Entry(root, width=10)
+txt.grid(column = 2, row = 7)
+ 
+def clicked():
+ 
+    res = txt.get()
+    metal.configure(text = res)
+
+btn = Button(root, text = "Calculate my carbon footprint" ,
+             fg = "red", command=clicked)
+# Set Button Grid
+btn.grid(column= 2, row= 20)
+ 
+root.mainloop()
