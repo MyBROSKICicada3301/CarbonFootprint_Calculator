@@ -42,23 +42,24 @@ Fbill = (e6.get())
 news = (e7.get())
 metal = (e8.get())
 
-total = 0
+total = 100
 
 def clicked():
-    total =0
+         
+    if e7.get()=="Yes" and e8.get()=="Yes":
+        total = int(e1.get())* 105 + int(e2.get()) * 105 + int(e3.get()) * 113
+        + int(e4.get()) * 0.79 + int(e5.get()) * 1100 + int(e6.get()) * 4400
+    elif e7.get()=="No" and e8.get()=="Yes":
+        total = int(e1.get())* 105 + int(e2.get()) * 105 + int(e3.get()) * 113
+        + int(e4.get()) * 0.79 + int(e5.get()) * 1100 + int(e6.get()) * 4400 + 184
+    elif e7.get()=="No" and e8.get()=="No":
+        total = int(e1.get())* 105 + int(e2.get()) * 105 + int(e3.get()) * 113 
+        + (int(e4.get()) * 0.79 + int(e5.get()) )* 1100 + (int(e6.get()) )* 4400 + 184 + 166
+    elif e7.get()=="Yes" and e8.get()=="No":
+        total = int(e1.get())* 105 + int(e2.get()) * 105 + int(e3.get()) * 113
+        + int(e4.get()) * 0.79 + int(e5.get()) * 1100 + int(e6.get()) * 4400 + 166
 
-    if (news == "Yes") and (metal == "Yes"):
-        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
-        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400))
-    elif (news == "No") and (metal == "Yes"):
-        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
-         + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 184)
-    elif (news == "No") and (metal == "No"):
-        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
-        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 184 + 166)
-    elif (news == "Yes") and (metal == "No"):
-        total = ((int(ebill) * 105) + (int(gbill) * 105) + (int(obill) * 113)
-        + (int(mbill) * 0.79) + (int(fbill) * 1100) + (int(Fbill) * 4400) + 166)
+    e = Label(root, text="Total CO2 emissions: " + str(total)).grid(row=10)
 
 
 
